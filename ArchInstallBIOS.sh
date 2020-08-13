@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#This is ChaoticGuru's Arch Linux Scripted Install.
-#Visit "https://github.com/ChaoticHackingNetwork/BasicScripts/" for more info
+#ChaoticGuru's Arch Linux Scripted Install.
+#Visit "https://github.com/Chaotic-Lab/Arch-Linux/" for more info
 # BIOS systems install...
 
 echo -e "\033[33;7mChaoticGuru's Arch Linux BIOS Install\033[0m"
@@ -83,14 +83,6 @@ cat /mnt/etc/fstab
 
 #Finish last minute setup
 echo 0 > /proc/sys/kernel/hung_task_timeout_secs
-wget https://raw.githubusercontent.com/ChaoticHackingNetwork/BasicScripts/master/chrootInstallBIOS.sh
-mv chrootInstallBIOS.sh /mnt
-echo "The next script (chrootInstallBIOS.sh) has been moved to your new root directory..."
-#echo "Run the following commands to finish setup..."
-#echo 
-#echo "	 [1] arch-chroot /mnt /bin/bash"
-#echo "	 [2] chmod +x chrootInstallBIOS.sh"
-#echo "  [3] ./chrootInstallBIOS.sh"
 
 #Chroot
 echo "We will now Chroot into your new system and finish up installation"
