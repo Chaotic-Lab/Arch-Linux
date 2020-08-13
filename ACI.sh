@@ -1,14 +1,22 @@
+#!/bin/bash
+
+# Arch Chroot Install (ACI)
+# --------------------------------
+# Author    : ChaoticGuru
+# Github    : https://github.com/Chaotic-Lab
+# Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork)
+
+# Set locale to en_US.UTF-8 UTF-8
+sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
 #Set time & clock
 timedatectl set-ntp true
 hwclock --systohc --utc
 
 #Change localtime *Note this script has it set too Chicago*
 ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime #CHANGE THIS TO YOUR TIMEZONE
-
-# Set locale to en_US.UTF-8 UTF-8
-sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
-locale-gen
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 #Install some needed packages
 pacman -Syyu
