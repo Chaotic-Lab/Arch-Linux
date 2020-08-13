@@ -3,8 +3,8 @@
 # Arch Bios Install (ABI)
 # --------------------------------
 # Author    : ChaoticGuru
-#             https://github.com/Chaotic-Lab
-# Discord	: https://discord.gg/nv445EX (ChaoticHackingNetwork)
+# Github    : https://github.com/Chaotic-Lab
+# Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork)
 
 echo -e "\033[33;7mChaoticGuru's Arch Linux BIOS Install\033[0m"
 
