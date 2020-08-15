@@ -85,12 +85,12 @@ cat /mnt/etc/fstab
 #Finish last minute setup
 echo 0 > /proc/sys/kernel/hung_task_timeout_secs
 wget https://raw.githubusercontent.com/Chaotic-Lab/Arch-Linux/master/ACI.sh
-mv ACI.sh /mnt
-echo "The next script (ACI.sh) has been moved to your new root directory..."
+mv ACBI.sh /mnt
+echo "The next script (ACBI.sh) has been moved to your new root directory..."
 echo "Run the following commands to finish setup..."
 echo 
 echo "	[1] arch-chroot /mnt /bin/bash"
-echo "	[2] chmod +x ACI.sh"
-echo "  [3] ./ACI.sh"
+echo "	[2] chmod +x ACBI.sh"
+echo "  [3] ./ACBI.sh"
 
 exit
