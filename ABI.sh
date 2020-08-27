@@ -1,12 +1,18 @@
 #!/bin/bash
 
 # Arch Bios Install (ABI)
-# --------------------------------
-# Author    : ChaoticGuru
-# Github    : https://github.com/Chaotic-Lab
-# Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork)
+# ---------------------------------------------------------------
+# Author    : Chaotic_Guru                                       |
+# Github    : https://github.com/Chaotic-Lab                     |
+#	      https://github.com/ChaoticHackingNetwork           |
+# Discord   : https://discord.gg/nv445EX (ChaoticHackingNetwork) |
+# ---------------------------------------------------------------
 
-echo -e "\033[33;36mChaoticGuru's Arch Linux BIOS Install\033[0m"
+echo -e "\033[33;36mChaotic_Guru's Arch Linux BIOS Install\033[0m"
+#echo             
+#read "  /\    |\   |---  |   |    |     |  |\ |  |   |  \  / "
+#read " /  \   | \  |     |---|    |     |  | \|  |   |   \/  "
+#read "/    \  |    |---  |   |    |___  |  |  \  |___|  /  \ "
 
 #Network Connections
 read -p 'Are you connected to the Internet? [y/N]: ' connected
@@ -18,11 +24,12 @@ fi
 
 #Mounting the File System Warning!
 echo "This script will create and format the following partitions:"
-echo
+echo ""
 echo "--------- /dev/sda1 - 16G will be mounted as SWAP space ------------"
 echo "--------- /dev/sda2 - Rest of space will be mounted as / -----------"
+echo ""
 echo "Exit now if this is not correct!!!"
-echo
+echo ""
 read -p 'Continue? [y/N]: ' partition
 if ! [ $partition = 'y' ] && ! [ $partition = 'Y' ]
 then
@@ -62,18 +69,13 @@ swapon /dev/sda1
 
 #Display new tables and confirm
 lsblk
-echo "Are the mount points correct?"
+echo "Mount points correct?"
 read -p 'Continue? [Y/n]' confirm
 if ! [ $confirm = 'y' ] && ! [ $confirm = 'Y' ]
 then 
 	echo "Please edit the script to continue..."
 	exit
 fi
-
-#Initialize Pacman
-pacman-key --init
-pacman-key --populate archlinux
-#pacman-key --refresh-keys
 
 #Install base system
 pacstrap /mnt base base-devel linux linux-firmware
@@ -84,7 +86,7 @@ cat /mnt/etc/fstab
 
 #Finish last minute setup
 echo 0 > /proc/sys/kernel/hung_task_timeout_secs
-wget https://raw.githubusercontent.com/Chaotic-Lab/Arch-Linux/master/ACBI.sh
+wget https://raw.githubusercontent.com/ChaoticHackingNetwork/Scripts/master/ACBI.sh
 mv ACBI.sh /mnt
 echo "The next script (ACBI.sh) has been moved to your new root directory..."
 echo "Run the following commands to finish setup..."
